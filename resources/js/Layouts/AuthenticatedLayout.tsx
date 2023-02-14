@@ -5,7 +5,6 @@ import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/react';
 import { FC } from "react";
-import { Method } from '@inertiajs/core';
 
 type Props = {
     auth: any,
@@ -65,7 +64,7 @@ const Authenticated: FC<Props> = ({ auth, header, children }) => {
 
                                     <Dropdown.Content>
                                         <Dropdown.Link href={route('profile.edit')}>Profile</Dropdown.Link>
-                                        <Dropdown.Link href={route('logout')} method={Method.POST} as="button">
+                                        <Dropdown.Link href={route('logout')} method="post" as="button">
                                             Log Out
                                         </Dropdown.Link>
                                     </Dropdown.Content>
@@ -116,7 +115,7 @@ const Authenticated: FC<Props> = ({ auth, header, children }) => {
 
                         <div className="mt-3 space-y-1">
                             <ResponsiveNavLink href={route('profile.edit')}>Profile</ResponsiveNavLink>
-                            <ResponsiveNavLink method={"post" as Method} href={route('logout')} as="button">
+                            <ResponsiveNavLink method="post" href={route('logout')} as="button">
                                 Log Out
                             </ResponsiveNavLink>
                         </div>
